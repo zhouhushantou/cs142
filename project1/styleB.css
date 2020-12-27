@@ -1,0 +1,26 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+
+b1{
+    background-color: #eeeff2;
+    width: 60px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
+    font-family: Tahoma;
+    border-left: 10px dotted #D0D0FF;   
+    margin: 2px auto;
+}
+
+b1:hover{
+    background-color: yellow;
+    color: goldenrod;
+}
+b1:last-of-type{
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}

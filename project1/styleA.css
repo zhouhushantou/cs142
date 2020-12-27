@@ -1,0 +1,21 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+b1{
+    background-color: #dfe1e7;
+    height: 100%;
+    width: 60px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    font-size: 40px;
+    font-family: Tahoma;
+    border-top: 1px solid #687291;   
+    margin: 2px auto;
+}
+
+b1:nth-of-type(even){
+    background-color: #eeeff2;
+}
