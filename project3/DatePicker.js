@@ -12,7 +12,7 @@ class DatePicker {
             'day': inputDate.getDate(),
             'year': inputDate.getFullYear()
         }
-        this.callback(this.id, fixedDate);
+
 
         //draw the calender header
         document.getElementById(this.id).innerHTML += "<div id='head'><button id='minus'><</button>" + "<b1>" + fixedDate.year + "</b1><b1>"
@@ -36,14 +36,17 @@ class DatePicker {
             document.getElementById(this.id).appendChild(g);
             if (startDate.getMonth() != inputDate.getMonth())
                 document.getElementById(this.id).lastChild.innerHTML += "<b1 id='dim'>" + startDate.getDate() + "</b1>";
-            else
-                document.getElementById(this.id).lastChild.innerHTML += "<b1>" + startDate.getDate() + "</b1>";
+            else {
+                document.getElementById(this.id).lastChild.innerHTML += "<b1 class='normal'>" + startDate.getDate() + "</b1>";
+            }
+
             startDate.setDate(startDate.getDate() + 1)
             while (startDate.getDay() != 0) {
                 if (startDate.getMonth() != inputDate.getMonth())
                     document.getElementById(this.id).lastChild.innerHTML += "<b1 id='dim'>" + startDate.getDate() + "</b1>";
-                else
-                    document.getElementById(this.id).lastChild.innerHTML += "<b1>" + startDate.getDate() + "</b1>";
+                else {
+                    document.getElementById(this.id).lastChild.innerHTML += "<b1 class='normal'>" + startDate.getDate() + "</b1>";
+                }
                 startDate.setDate(startDate.getDate() + 1)
             }
 
@@ -54,14 +57,26 @@ class DatePicker {
             this.render(inputDate);
         }
         document.getElementById(this.id).firstChild.firstChild.addEventListener("click", clickHandleer.bind(this, inputDate));
+
         //add month button click handler
         let clickHandleerAdd = function () {
             inputDate.setMonth(inputDate.getMonth() + 1);
             this.render(inputDate);
         }
         document.getElementById(this.id).firstChild.lastChild.addEventListener("click", clickHandleerAdd.bind(this, inputDate));
+
+        //date selection handler
+        let days = document.getElementById(this.id).getElementsByClassName('normal');
+        for (let i = 0; i < days.length; i++) {
+            let fixedDate1 = {
+                'month': inputDate.getMonth() + 1, 'day': i + 1, 'year': inputDate.getFullYear()
+            }
+            document.getElementById(this.id).getElementsByClassName('normal')[i].
+                addEventListener("click", this.callback.bind(this, this.id, fixedDate1));
+        }
     }
 }
+
 
 
 

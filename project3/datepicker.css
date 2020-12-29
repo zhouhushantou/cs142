@@ -37,3 +37,7 @@ button{
     line-height: 30px;
     background-color:rgb(166, 204, 240);
 }
+
+.normal:active{
+   background-color: rgb(224, 46, 114);
+}
