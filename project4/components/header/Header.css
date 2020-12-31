@@ -1,0 +1,16 @@
+p1{
+    background-color: rgb(226, 235, 235);
+    font:bold;
+    font-family: 'Gill Sans','Trebuchet MS', sans-serif;
+    font-size: larger;
+    width: 150px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    color: brown;
+}
+
+img{
+    width: 150px;
+}
