@@ -13,13 +13,16 @@ import TopBar from './components/topBar/TopBar';
 import UserDetail from './components/userDetail/userDetail.jsx';
 import UserList from './components/userList/userList.jsx';
 import UserPhotos from './components/userPhotos/userPhotos.jsx';
+import fetchModel from './lib/fetchModelData.js'
 
 class PhotoShare extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
+    <fetchModel />
     return (
       <HashRouter>
         <div>
